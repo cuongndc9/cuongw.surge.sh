@@ -6,5 +6,5 @@ Using [gitfolio](https://github.com/imfunniee/gitfolio) and [Surge](https://surg
 
 
 <!-- INSPIRATIONAL_QUOTE_START -->
-> "Success is not how high you have climbed, but how you make a positive difference to the world." - Roy T. Bennett
+> "Innovation distinguishes between a leader and a follower." - Steve Jobs
 <!-- INSPIRATIONAL_QUOTE_END -->
