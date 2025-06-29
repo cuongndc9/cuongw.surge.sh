@@ -6,5 +6,5 @@ Using [gitfolio](https://github.com/imfunniee/gitfolio) and [Surge](https://surg
 
 
 <!-- INSPIRATIONAL_QUOTE_START -->
-> "I have not failed. I've just found 10,000 ways that won't work." - Thomas A. Edison
+> "Innovation distinguishes between a leader and a follower." - Steve Jobs
 <!-- INSPIRATIONAL_QUOTE_END -->
