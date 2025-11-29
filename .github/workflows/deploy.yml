@@ -1,0 +1,44 @@
+name: Deploy to Surge.sh
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Surge
+        run: npm install -g surge
+
+      - name: Deploy to Surge
+        if: github.event_name == 'push'
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: surge --project . --domain cuongw.surge.sh
+
+      - name: Deploy Preview (Pull Request)
+        if: github.event_name == 'pull_request'
+        env:
+          SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
+        run: surge --project . --domain pr-${{ github.event.pull_request.number }}-cuongw.surge.sh
